@@ -7,10 +7,10 @@ require 'spree_multi_currency/version'
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_multi_currency'
-  s.version     = '3.3.0'
+  s.version     = SpreeMultiCurrency.version
   s.summary     = 'Provide currency customization for Spree Commerce.'
   s.description = s.summary
-  s.required_ruby_version = '>= 2.1.0'
+  s.required_ruby_version = '>= 2.2.4'
 
   s.authors   = ['Gregor MacDougall', 'Spree Community']
   s.email     = ['gmacdougall@freerunningtechnologies.com', 'gems@spreecommerce.com']
@@ -22,7 +22,9 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_runtime_dependency 'spree_backend'
+  s.add_runtime_dependency 'spree_backend', '>= 3.1.0', '< 5.0'
+  s.add_runtime_dependency 'spree_extension'
+  s.add_dependency 'deface', '~> 1.0'
 
   s.add_development_dependency 'capybara', '~> 2.4.4'
   s.add_development_dependency 'poltergeist', '~> 1.6.0'
